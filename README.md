@@ -1,7 +1,5 @@
 # 🎓 Student Performance Prediction using Logistic Regression
 
----
-
 ## 📌 Project Title
 **Student Performance Prediction using Logistic Regression**
 
@@ -9,30 +7,29 @@
 
 ## 📅 Week 2 – Mini Project (AI & ML)
 
-This project aims to build a simple machine learning model to predict whether a student will **pass or fail** based on:
-- The number of hours they studied
-- Their attendance percentage
+This project builds a simple machine learning model to predict whether a student will **pass or fail** based on:
 
-The model is built using **Logistic Regression**, a supervised learning classification algorithm.
+- Hours studied
+- Attendance percentage
+
+The model uses **Logistic Regression**, a supervised classification algorithm.
 
 ---
 
 ## 🎯 Objective
 
-The main objectives of this project are:
+To:
 
-- To understand and implement logistic regression for binary classification
-- To learn the basic ML workflow: data creation, visualization, training, testing, and prediction
-- To evaluate model performance on test data
-- To make predictions on new input values
+- Understand and apply a basic ML classification algorithm
+- Train and test a model on a small dataset
+- Predict new outcomes
+- Evaluate accuracy
 
-This project is designed for beginners and focuses on gaining hands-on experience with a simple, interpretable algorithm.
+This project is intended for beginners exploring core ML concepts.
 
 ---
 
 ## 📊 Dataset Description
-
-The dataset is manually created for learning purposes. It consists of the following features:
 
 | Feature Name     | Description                            |
 |------------------|----------------------------------------|
@@ -49,95 +46,107 @@ The dataset is manually created for learning purposes. It consists of the follow
 | 4             | 75         | 1         |
 | 1             | 50         | 0         |
 
-> Note: The dataset contains 10 such samples and is designed only for learning and experimentation.
+> 📌 Note: The dataset contains 10 samples and is for learning/demo purposes only.
 
 ---
 
 ## 🛠️ Tools and Libraries Used
 
-The project was developed in Python using the following libraries:
-
-| Library          | Purpose                                     |
-|------------------|---------------------------------------------|
-| pandas           | Data creation and handling                  |
-| matplotlib       | Data visualization                          |
-| sklearn (scikit-learn) | ML model creation, training, testing, evaluation |
+| Library            | Purpose                                    |
+|--------------------|--------------------------------------------|
+| `pandas`           | Data handling                              |
+| `matplotlib.pyplot`| Data visualization                         |
+| `sklearn`          | ML model training, testing, evaluation     |
 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-📈 Machine Learning Workflow
-1. Dataset Creation
-The dataset is created using Python dictionaries and converted into a DataFrame using pandas.
+```
 
-2. Data Visualization
-A scatter plot is used to visualize the data and class distribution (pass/fail) using color mapping.
+---
 
-3. Data Splitting
-Features (Hours_Studied, Attendance) and label (Pass/Fail) are separated and split into training and test sets using train_test_split().
+## 📈 Machine Learning Workflow
 
-4. Model Training
-A logistic regression model is trained on the training dataset.
+1. **Dataset Creation**  
+   The dataset is hardcoded using Python dictionaries and converted into a pandas DataFrame.
 
-5. Model Testing & Evaluation
-The model's predictions on the test set are compared with actual labels to calculate accuracy.
+2. **Data Visualization**  
+   A scatter plot is created to visualize the data points and distinguish pass/fail students using colors.
 
-6. Prediction on New Data
-The trained model is used to make predictions for new student data points.
+3. **Data Splitting**  
+   Features (`Hours_Studied`, `Attendance`) and labels (`Pass/Fail`) are separated and split into training and testing sets using `train_test_split()`.
 
-🧪 Results
-✅ Model Accuracy
-The model achieved an accuracy of 100% on the test data (this may vary based on the train/test split).
+4. **Model Training**  
+   A Logistic Regression model is trained using the training data.
 
-✅ Example Prediction
-python
-Copy
-Edit
+5. **Model Evaluation**  
+   Predictions are made on the test set and the model's accuracy is computed using `accuracy_score()`.
+
+6. **Prediction on New Data**  
+   The trained model predicts the pass/fail outcome for new student data.
+
+---
+
+## 🧪 Results
+
+### ✅ Model Accuracy  
+The model achieves high accuracy on the test set, typically close to 100% due to the small dataset size.
+
+### ✅ Example Prediction
+
+```python
 new_data = pd.DataFrame({
     'Hours_Studied': [2, 5, 6],
     'Attendance': [55, 80, 90]
 })
 predictions = model.predict(new_data)
-Output:
+print(predictions)
+```
 
-nginx
-Copy
-Edit
-   Hours_Studied  Attendance  Predicted_Pass_Fail
-0            2.0          55                    0
-1            5.0          80                    1
-2            6.0          90                    1
-📁 Project Files
-File Name	Description
-student_performance_logistic_regression.py	Python script with the full ML workflow
-README.md	Project documentation
+**Output:**
 
-🚀 How to Run This Project
-Open your Python environment (Jupyter, Google Colab, or any IDE)
+| Hours_Studied | Attendance | Predicted_Pass_Fail |
+|---------------|------------|---------------------|
+| 2             | 55         | 0                   |
+| 5             | 80         | 1                   |
+| 6             | 90         | 1                   |
 
-Install required libraries (if not already installed):
+---
 
-bash
-Copy
-Edit
-pip install pandas matplotlib scikit-learn
-Run the .py or .ipynb file
+## 📁 Project Files
 
-View plots, accuracy, and make new predictions
+| File Name                                 | Description                         |
+|-------------------------------------------|-------------------------------------|
+| `student_performance_logistic_regression.py` | Python script with full code       |
+| `README.md`                               | Project documentation              |
 
-📌 Important Notes
-The dataset is extremely small and not suitable for production.
+---
 
-This is a concept learning project for beginners.
+## 🚀 How to Run This Project
 
-Logistic regression is ideal for learning basic classification in ML.
+1. Open your preferred Python environment (Google Colab, Jupyter Notebook, or local IDE).
+2. Install required libraries if needed:
+   ```bash
+   pip install pandas matplotlib scikit-learn
+   ```
+3. Run the script or notebook cells step-by-step.
+4. Modify input data as needed to make new predictions.
 
-👤 Author
-Name: Fahim Akthar B
+---
 
-Institution: Crescent Institute of Science & Technology
+## ⚠️ Important Notes
 
-Course: AI & ML – Week 2 Mini Project
+- This project uses a **very small dataset** and is meant purely for educational purposes.
+- Logistic Regression works well here due to the simple, binary classification problem.
+- Accuracy may be misleadingly high given the dataset size; do not use this model for real-world decisions.
+
+---
+
+## 👤 Author
+
+- **Name:** Fahim Akthar B  
+- **Institution:** Crescent Institute of Science & Technology  
+- **Course:** AI & ML – Week 2 Mini Project
